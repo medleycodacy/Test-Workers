@@ -1,0 +1,9 @@
+ @Test(dependsOnMethods = "tC02addProject")
+    public void tC02postCoverage() throws EmptyFieldsFromApiException {
+        String projectToken = repositories.getProjectToken(user, org, repository, provider);
+        postCoverage.postCoverageV2(projectToken, codacyTestCommitUuid, language, coverageReport)
+                .body(containsString("success"));
+        postCoverage.postCoverageV2(projectToken, codacyTestPRCommitUuid, language, diffCoverageReport)
+                .body(containsString("success"));
+    }
+

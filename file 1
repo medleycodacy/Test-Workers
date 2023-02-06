@@ -1,4 +1,6 @@
 @Test(alwaysRun = true)
     public void tC02addProject() {
+           repositoriesService.addRepository(repositoryPath, provider, apiToken);
+
        repositoriesService.addRepository(repositoryPath, provider, apiToken);
     }

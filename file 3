@@ -5,4 +5,6 @@
                 .body(containsString("success"));
         postCoverage.postCoverageV2(projectToken, codacyTestPRCommitUuid, language, diffCoverageReport)
                 .body(containsString("success"));
+       repositoriesService.addRepository(repositoryPath, provider, apiToken);
+
     }
